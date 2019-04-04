@@ -1,0 +1,12 @@
+<view class='body'>
+  <view class='search'>
+    <input placeholder='请输入学校、商务楼、地址' value="{{city.keyword}}" bindblur="changecity"></input>
+    <button size="mini" bindtap="changesub" class='search-btn'>提交</button>
+  </view>
+  <block wx:if="{{addr.length}}">
+    <view bindtap="goMain" class='addr' data-geohash="{{item.geohash}}" wx:for="{{addr}}" wx:key="{{index}}">
+      <text class='addr-name'>{{item.name}}</text>
+      <text class='addr-address'>{{item.address}}</text>
+    </view>
+  </block>
+</view>

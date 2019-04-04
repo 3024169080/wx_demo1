@@ -1,0 +1,40 @@
+<view>
+  <view class='cont'>
+    <image class='bg' src="http://elm.cangdu.org/img/{{topinfo.image_path}}"></image>
+    <view class='topinfo'>
+      <image src="http://elm.cangdu.org/img/{{topinfo.image_path}}"></image>
+      <view class='shopname'>
+        <view>{{topinfo.name}}</view>
+        <view>商家配送/分钟送达/{{topinfo.piecewise_agent_fee.tips}}</view>
+        <view>公告：{{topinfo.promotion_info}}</view>
+      </view>
+    </view>
+    <view class='tab'>
+      <view><text class='active'>商品</text></view>
+      <view><text>评价</text></view>
+    </view>
+  </view>
+  <view class='main'>
+    <scroll-view scroll-y class='main-nav'>
+      <view class="{{index==active?'active':''}}" bindtap="changeactive" data-index="{{index}}" data-id="type-{{item.id}}" wx:for="{{shop}}" wx:key="{{index}}">{{item.name}}</view>
+    </scroll-view>
+    <scroll-view scroll-y class='content' scroll-into-view="{{scroll_id}}">
+      <block wx:for="{{shop}}" wx:key="{{index}}">
+        <view class='cont-tit' id="type-{{item.id}}">{{item.name}}<text>{{item.description}}</text></view>
+        <view class='cont-food' wx:for="{{item.foods}}" wx:key="{{index}}">
+          <image src="http://elm.cangdu.org/img/{{item.image_path}}"></image>
+          <view class='food-info'>
+            <view class='name'>{{item.name}}</view>
+            <view class='description'>{{item.description}}</view>
+            <view class='tips'>{{item.tips}}</view>
+            <view class='item' wx:if="!{{item.activity}}"><text style='border:1rpx solid #{{item.activity.icon_color}};color:#{{item.activity.image_text_color}};border-radius:10rpx;'>{{item.activity.image_text}}</text></view>
+            <view class='price'>
+              <text>￥{{item.specfoods[0].price}}<text>起</text></text>
+              <text>选规格</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

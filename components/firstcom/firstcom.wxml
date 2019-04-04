@@ -1,0 +1,5 @@
+<!--components/firstcom/firstcom.wxml-->
+<view>
+  <text>firstcom组件 {{a}}</text>
+  <button bindtap="changeevent"></button>
+</view>

@@ -1,0 +1,74 @@
+<view class='body'>
+<view class='longitude'>
+  <navigator url='/pages/home/home' class='selectaddr' bindtap='delgeohash'>>选择位置</navigator>
+  <text bindtap='tolocation'>定位</text>
+</view>
+<swiper indicator-dots indicator-color='rgba(0,0,0,0.2)' indicator-active-color='#007aff'>
+  <swiper-item  class='types' wx:for="{{types}}" wx:key="{{index}}">
+    <view class='type' wx:for="{{item}}" wx:for-item="type" wx:key="{{index}}">
+      <image src="https://fuss10.elemecdn.com{{type.image_url}}"></image>
+      <text>{{type.title}}</text>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class='goodslist'>
+  <view class='goods-tit'>
+    <image src="../../img/shop.png"></image>
+    <text>附近商家</text>
+  </view>
+    <view class='goods-info'>
+      <navigator url='/pages/shop/shop?shopid={{item.id}}' class='info' wx:for="{{list}}" wx:key="{{index}}">
+        <image class='info-img' src='http://elm.cangdu.org/img/{{item.image_path}}'></image>
+        <view class='info-cont'>
+          <view class='cont-top info-flex'>
+            <view class='ctop-tit'>
+              <text>品牌</text>
+              <text>{{item.name}}</text>
+            </view>
+            <view class='ctop-tag'>
+              <text style='color:#{{item.icon_color}}' wx:for="{{item.supports}}" wx:key="{{index}}">{{item.icon_name}}</text>
+            </view>
+          </view>
+          <view class='cont-middle info-flex'>
+            <view class='cmiddle-left'>
+              <view class='shop-star'>
+                <image src="/img/star2.png"></image>
+                <view class='star' style='width:{{item.rating/5*100}}%;'></view>
+              </view>
+              <text>{{item.rating}}</text>
+              <text>月售{{item.recent_order_num}}单</text>
+            </view>
+            <view class='cmiddle-right'>
+              <text style='background:#{{item.delivery_mode.color}};color:#fff;'>{{item.delivery_mode.text}}</text>
+              <text style='border:1rpx solid #3190e8;color:#3190e8;'>准时达</text>
+            </view>
+          </view>
+          <view class='cont-bottom info-flex'>
+            <view class='cbottom-left'>
+              <text>￥{{item.float_minimum_order_amount}}起送/配送费约￥{{item.float_delivery_fee}}</text>
+            </view>
+            <view class='cbottom-right'>
+              <text>{{item.distance}} /</text>
+              <text>{{item.order_lead_time}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+</view>
+
+
+
+
+
+
+  <!-- <text>1</text>
+  <map longitude="{{location.longitude}}" latitude="{{location.latitude}}"></map>
+  <view>
+    <input class="incode" value="{{incode}}" bindblur='changeincode'></input>
+    <image bindtap="changecode" src='{{code}}' class="code"></image>
+    <button bindtap='subcode'>提交</button>
+  </view> -->
+</view>

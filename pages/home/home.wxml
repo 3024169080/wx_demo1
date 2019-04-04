@@ -1,0 +1,38 @@
+<!--pages/home/home.wxml-->
+<view class='body'>
+
+  <view class="city-info">
+    <text>当前定位城市:</text>
+    <text>定位不准时，请在城市列表中选择</text>
+  </view>
+
+  <view class='city'>
+    <navigator url="/pages/searchcity/searchcity?city_id={{guesscity.id}}" class='city-cit'>{{guesscity.name}}</navigator>
+    <text>></text>
+  </view>
+
+  <view class='hotcitise'>
+    <text class='hot-tit'>热门城市</text>
+    <view class='hotlist'>
+      <navigator url="/pages/searchcity/searchcity?city_id={{item.id}}" class='hot-txt' wx:for="{{hotcities}}" wx:key="{{index}}">{{item.name}}</navigator>
+    </view>
+  </view>
+
+  <view class='cities'>
+    <view class='cit' wx:for="{{cities}}" wx:key="{{index}}">
+      <text class='cit-tit'>{{item[0]}}</text>
+      <view class='cit-list'>
+        <navigator url="/pages/searchcity/searchcity?city_id={{item.id}}" wx:for="{{item[1]}}" wx:key="{{index}}" class='cit-list-txt'>{{item.name}}</navigator>
+      </view>
+    </view>  
+  </view>
+</view>
+  <!-- <view class='cities'>
+    <view class='cit' wx:for="{{cities}}" wx:key="{{index}}">
+      <text class='cit-tit'>{{item[0]}}</text>
+      <view class='cit-list'>
+        <navigator url="/pages/searchcity/searchcity?city_id={{item.id}}" wx:for="{{item[1]}}" wx:key="{{index}}" class='cit-list-txt'>{{item.name}}</navigator>
+      </view>
+    </view>  
+  </view>
+</view> -->

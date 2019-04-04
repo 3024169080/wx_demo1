@@ -1,0 +1,35 @@
+/* pages/searchcity/searchcity.wxss */
+.body view{
+  background: #fff;
+}
+.search{
+  padding:20rpx;
+}
+.search input{
+  border:1px solid #e4e4e4;
+  padding:10rpx;
+}
+.search .search-btn{
+  width:100%;
+  margin-top:10rpx;
+  padding:10rpx 0;
+  background: #3190e8;
+  color: #fff;
+}
+.search .search-btn::after{
+  border:none;
+}
+.addr{
+  padding:20rpx;
+  margin-top:2rpx;
+  background: #fff;
+  display: flex;
+  flex-direction:column;
+}
+.addr-name{
+  margin-bottom:10rpx;
+}
+.addr-address{
+  font-size:24rpx;
+  color: #999;
+}

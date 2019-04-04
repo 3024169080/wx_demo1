@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/home/home",
+    "pages/shop/shop",
+    "pages/demo/demo",
+    "pages/main/main",
+    "pages/searchcity/searchcity",
+    "pages/logs/logs"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3190e8",
+    "navigationBarTitleText": "一个",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true,
+    "backgroundColor": "#3190e8" 
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#444",
+    "selectedColor": "#3190e8",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "外卖",
+        "iconPath": "./img/index.png",
+        "selectedIconPath": "./img/index_selected.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "./img/my.png",
+        "selectedIconPath": "./img/my_selected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000
+  }
+}

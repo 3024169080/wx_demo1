@@ -1,0 +1,10 @@
+/**app.wxss**/
+.body{   
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+view,text,navigator{
+  font-size:28rpx;
+  box-sizing:border-box;
+}
